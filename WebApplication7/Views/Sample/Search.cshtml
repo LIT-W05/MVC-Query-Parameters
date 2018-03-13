@@ -1,0 +1,35 @@
+﻿@using WebApplication7.Models
+@model SearchResults
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <h1>You searched for @Model.SearchText</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Unit Price</th>
+            <th>Quantity Per Unit</th>
+        </tr>
+        @foreach (Product product in Model.Products)
+        {
+            <tr>
+                <td>
+                    @product.Id
+                </td>
+                <td>@product.Name</td>
+                <td>@product.UnitPrice.ToString("C")</td>
+                <td>@product.QuantityPerUnit</td>
+            </tr>
+        }
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿@using WebApplication7.Models
+@model IEnumerable<Category>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container" style="margin-top: 40px">
+        <table class="table table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+            @foreach (Category category in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="/northwind/products?catid=@category.Id">
+                            @category.Id
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/northwind/products?catid=@category.Id">
+                            @category.Title
+                    </a>
+                </td>
+                <td>@category.Description</td>
+            </tr>
+            }
+        </table>
+    </div>
+</html>

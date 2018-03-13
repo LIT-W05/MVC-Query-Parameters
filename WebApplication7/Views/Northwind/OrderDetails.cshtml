@@ -1,0 +1,33 @@
+﻿@using WebApplication7.Models
+@model IEnumerable<OrderDetail>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OrderDetails</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container" style="margin-top: 40px">
+    <table class="table table-bordered">
+        <tr>
+            <th>Order Id</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+        </tr>
+        @foreach (OrderDetail detail in Model)
+        {
+            <tr>
+                <td>@detail.OrderId</td>
+                <td>@detail.UnitPrice.ToString("C")</td>
+                <td>@detail.Quantity</td>
+            </tr>
+        }
+    </table>
+</div>
+</html>
